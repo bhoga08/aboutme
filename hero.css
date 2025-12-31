@@ -1,0 +1,145 @@
+/* HERO PAGE */
+.hero-page.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  max-width: 720px;
+  width: 100%;
+  color: #f8fafc;
+
+  /* FADE + SLIDE ANIMATION */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeSlide 0.9s ease-out forwards;
+}
+
+/* ANIMATION */
+@keyframes heroFadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HEADING */
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* NAME HIGHLIGHT */
+.highlight {
+  color: #38bdf8;
+}
+
+/* SUBTITLE */
+.hero-content h3 {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+/* DESCRIPTION */
+.hero-content p {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.btn {
+  padding: 10px 22px;
+  background: #38bdf8;
+  color: #020617;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+}
+
+/* SOCIAL ICONS */
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.hero-socials a {
+  font-size: 1.4rem;
+  color: #cbd5e1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-4px);
+  color: #38bdf8;
+}
+.highlight {
+  position: relative;
+  color: #38bdf8;
+}
+
+/* underline */
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: #38bdf8;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: nameUnderline 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes nameUnderline {
+  to {
+    transform: scaleX(1);
+  }
+}
+/* RESUME BUTTON */
+.btn-resume {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+/* hover */
+.btn-resume:hover {
+  background: #38bdf8;
+  color: #020617;
+}
