@@ -262,3 +262,84 @@ h2, h3 {
 p {
   color: var(--text-muted);
 }
+/* ================================
+   ANDROID HAMBURGER (MATERIAL ICON)
+   ================================ */
+
+.menu-toggle {
+  display: none;
+  font-size: 32px;              /* Android size */
+  color: var(--text-main);
+  cursor: pointer;
+  user-select: none;
+  z-index: 1001;
+}
+
+/* ================================
+   MOBILE NAV FIX (NO OVERLAP)
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Mobile menu container */
+  .main-nav {
+    position: fixed;
+    top: 64px;                  /* header height */
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+
+    transition: right 0.35s ease;
+    z-index: 1000;
+  }
+
+  /* When menu is open */
+  .main-nav.show {
+    right: 0;
+  }
+
+  /* Bigger tap targets (Android friendly) */
+  .main-nav a {
+    font-size: 1.3rem;
+    padding: 10px 0;
+  }
+}
+/* ================================
+   HAMBURGER → X ANIMATION
+   ================================ */
+
+.menu-toggle {
+  transition: transform 0.35s ease;
+}
+
+/* jab menu open ho */
+.menu-toggle.active {
+  transform: rotate(180deg);
+}
+/* ================================
+   BACKGROUND BLUR WHEN MENU OPEN
+   ================================ */
+
+body.menu-open .page.active {
+  filter: blur(6px);
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
+/* header blur nahi hoga */
+body.menu-open .main-header {
+  filter: none;
+}
